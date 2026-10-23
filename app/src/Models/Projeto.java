@@ -15,7 +15,7 @@ public class Projeto {
     }
 
     public String toString(){
-        return this.codigo+" | "+this.nome;
+        return this.codigo+" | "+this.nome+" | "+this.custo+" | "+this.beneficio;
     }
 
     public String getCodigo() {
