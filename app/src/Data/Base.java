@@ -62,10 +62,20 @@ public class Base {
             Projeto p3 = new Projeto("P3", "Rede sem fio institucional", 10000, 55);
             this.adicionarProjeto(p3);
 
-            // TODO: adicionar outros projetos da lista (exceto o p7)
+            Projeto p4 = new Projeto("P4", "Servidores de pesquisa", 22000, 110);
+            this.adicionarProjeto(p4);
+
+            Projeto p5 = new Projeto("P5", "Sistema de segurança", 8000, 40);
+            this.adicionarProjeto(p5);
+
+            Projeto p6 = new Projeto("P6", "Capacitação docente", 6000, 35);
+            this.adicionarProjeto(p6);
 
             Projeto p7 = new Projeto("P7", "Laboratório de IA", 20000, 105);
             this.adicionarProjeto(p7);
+
+            Projeto p8 = new Projeto("P8", "Sistema de gestão acadêmica", 14000, 75);
+            this.adicionarProjeto(p8);
     
             this.projetosBaseCriados = true;
             
