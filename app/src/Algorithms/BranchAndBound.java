@@ -34,10 +34,12 @@ public class BranchAndBound {
                 ? new ArrayList<>() : incompatibilidades;
     }
 
+    //  --- Preparação dos dados
     public Resultado resolver() {
         resultado = new Resultado();
         atuais = new ArrayList<>();
         ordenados = new ArrayList<>(projetos);
+
         // Ordem por benefício/custo melhora a qualidade da primeira solução.
         ordenados.sort(new Comparator<Projeto>() {
             public int compare(Projeto a, Projeto b) {
@@ -67,6 +69,7 @@ public class BranchAndBound {
         return resultado;
     }
 
+    //  --- Ramificação e poda
     private void explorar(List<Projeto> opcionais, int indice, double custoAtual, int beneficioAtual) {
         resultado.nosExplorados++;
 
@@ -88,7 +91,7 @@ public class BranchAndBound {
 
         Projeto p = opcionais.get(indice);
 
-        // Ramo incluir: só segue se orçamento e incompatibilidades permitirem.
+        // Só segue se orçamento e incompatibilidades permitirem.
         atuais.add(p);
         if (custoAtual + p.getCusto() <= orcamento && restricoesValidas(atuais)) {
             explorar(opcionais, indice + 1, custoAtual + p.getCusto(),
@@ -102,6 +105,7 @@ public class BranchAndBound {
         explorar(opcionais, indice + 1, custoAtual, beneficioAtual);
     }
 
+    //  --- Cálculo do limite superior.
     private double limiteSuperior(List<Projeto> opcionais, int indice, double custoAtual, int beneficioAtual) {
         double capacidade = orcamento - custoAtual;
         double limite = beneficioAtual;

@@ -116,7 +116,7 @@ public class Base {
             if(projeto_p7 == null){
                 System.out.println("Projeto P7 não encontrado, Cenario B não será criado.\n");
             }else{
-                Cenario cenario_b = new Cenario("Cenario B", 50000, null);
+                Cenario cenario_b = new Cenario("Cenario B", 30000, null);
                 cenario_b.adicionarObrigatorio(projeto_p7);
                 this.adicionarCenario(cenario_b);
             }
