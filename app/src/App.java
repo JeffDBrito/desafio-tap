@@ -4,9 +4,14 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Base base = Base.getInstance();
-        base.criarProjetosBase();
+        base.preencherBase();
 
-        System.out.println(base.getProjetos());
+        // TODO: Fazer opções do menu
+        // Talvez para começar podemos adicionar esses:
+        // - visualizar projetos
+        // - visualizar cenarios
+        // - criar projeto
+        // - criar cenario
 
     }
 }
